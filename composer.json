@@ -1,0 +1,41 @@
+{
+    "name": "victtech/lottery",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan",
+            "email": "ryan@victtech.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/victtech/lottery",
+    "keywords": ["Laravel", "Lottery"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Victtech\\Lottery\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Victtech\\Lottery\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Victtech\\Lottery\\LotteryServiceProvider"
+            ],
+            "aliases": {
+                "Lottery": "Victtech\\Lottery\\Facades\\Lottery"
+            }
+        }
+    }
+}
