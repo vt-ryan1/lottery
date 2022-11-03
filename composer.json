@@ -5,14 +5,13 @@
     "authors": [
         {
             "name": "Ryan",
-            "email": "ryan@victtech.com",
-            "homepage": "http://author.com"
+            "email": "ryan@victtech.com"
         }
     ],
     "homepage": "https://github.com/victtech/lottery",
     "keywords": ["Laravel", "Lottery"],
     "require": {
-        "illuminate/support": "~9"
+        "php" : "^7.0|^8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
