@@ -35,7 +35,7 @@ class LotteryServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('lottery', function ($app) {
-            return new Lottery;
+            return new Lottery($app['session'],$app['config']);
         });
     }
 
