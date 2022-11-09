@@ -92,7 +92,7 @@ class Lottery
             ];
             array_push($prize_arr,$prize);
         }
-        array_push($prize_arr,array('id'=>'未中奖','prize'=>'未中奖','v'=>$base-$noBingo));
+        array_push($prize_arr,array('id'=>'no prize','prize'=>'no prize','v'=>$base-$noBingo));
 
         $proArr =[];
         foreach ($prize_arr as $key => $val) {
@@ -116,6 +116,7 @@ class Lottery
             }
         }
         unset ($proArr);
+        $result = ($result == 'no prize')?null:$result;
         $result = $this->recordAward($result); //记录和校验奖品总数
         return $result;
     }
