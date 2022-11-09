@@ -1,11 +1,10 @@
-# Lottery
+# Lottery 抽奖功能
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -16,42 +15,32 @@ $ composer require victtech/lottery
 ```
 
 ## Usage
-
-## Change log
-
-Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
+#### 安装完之后，发布配置文件
 ``` bash
-$ composer test
+    php artisan vendor:publish --tag=lottery.config
 ```
 
-## Contributing
+#### 配置文件说明
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+``` bash
+    return [
+    'awards'=>[
+        //key 是奖项名称
+        '一等奖'=>[
+            'total'=>5, //奖项总数量
+            'probability'=>30  //中奖概率，百分率.所有奖项百分率之外就是不中奖概率
+        ],
+        '二等奖'=>[
+            'total'=>10,
+            'probability'=>50
+        ]
+    ],
+];
 
-## Security
+```
 
-If you discover any security related issues, please email ryan@victtech.com instead of using the issue tracker.
+#### 清除以中奖信息
 
-## Credits
-
-- [Ryan][link-author]
-- [All Contributors][link-contributors]
-
-## License
-
-MIT. Please see the [license file](license.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/victtech/lottery.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/victtech/lottery.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/victtech/lottery/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
-
-[link-packagist]: https://packagist.org/packages/victtech/lottery
-[link-downloads]: https://packagist.org/packages/victtech/lottery
-[link-travis]: https://travis-ci.org/victtech/lottery
-[link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/victtech
-[link-contributors]: ../../contributors
+```bash
+    php artisan lottery:clearRecord
+```

@@ -3,6 +3,7 @@
 namespace Victtech\Lottery;
 
 use Illuminate\Support\ServiceProvider;
+use Victtech\Lottery\Command\ClearLotteryRecord;
 
 class LotteryServiceProvider extends ServiceProvider
 {
@@ -77,6 +78,8 @@ class LotteryServiceProvider extends ServiceProvider
         ], 'lottery.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+         $this->commands([
+             ClearLotteryRecord::class
+         ]);
     }
 }
