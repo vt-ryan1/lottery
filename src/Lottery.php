@@ -5,17 +5,11 @@ namespace Victtech\Lottery;
 use Illuminate\Config\Repository;
 use Illuminate\Session\SessionManager;
 
-class Lottery
+/**
+ * 按概率抽取不同的奖品
+ */
+class Lottery extends BaseLottery
 {
-    protected $session;
-    protected $config;
-
-
-    public function __construct(SessionManager $session,Repository $config){
-        $this->session = $session;
-        $this->config = $config;
-    }
-
     public function getAward()
     {
         $award = null;
