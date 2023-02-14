@@ -49,8 +49,9 @@ class PersonLottery extends BaseLottery
 
             $row = json_decode($row, JSON_UNESCAPED_UNICODE);
             foreach ($row as $item) {
-                ksort($item);//按数组建排序
-                ksort($data);
+//                ksort($item);//按数组建排序
+//                ksort($data);
+
                 $itemStr = md5(json_encode($item, JSON_UNESCAPED_UNICODE));
                 $dataStr = md5(json_encode($data, JSON_UNESCAPED_UNICODE));
                 if ($itemStr == $dataStr) {
