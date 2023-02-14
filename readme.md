@@ -51,7 +51,7 @@ PersonLottery::getAward($dataSource,$count);
 $dataSource //数据源所有参与抽奖的人员，数组格式，
 $count //中奖人数
 ```
-返回昌都市$count的包含抽奖人员的数组，代表中奖人员
+返回长度是$count的包含抽奖人员的数组，代表中奖人员
 
 #### 清除已中奖信息
 

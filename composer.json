@@ -30,10 +30,12 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Victtech\\Lottery\\LotteryServiceProvider"
+                "Victtech\\Lottery\\LotteryServiceProvider",
+                "Victtech\\Lottery\\PersonLotteryServiceProvider"
             ],
             "aliases": {
-                "Lottery": "Victtech\\Lottery\\Facades\\Lottery"
+                "Lottery": "Victtech\\Lottery\\Facades\\Lottery",
+                "PersonLottery": "Victtech\\Lottery\\Facades\\PersonLotter"
             }
         }
     }
